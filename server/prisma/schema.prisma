@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Campaign {
+  id        String   @id @default(uuid())
+  name      String
+  status    String   @default("draft") // active, paused, draft
+  type      String   @default("modal")
+  trigger   String?
+  rules     String   @default("[]") // JSON string of rules
+  config    String   @default("{}") // JSON string of UI config
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("campaigns")
+}
+
+model User {
+  id        String   @id
+  traits    String   @default("{}") // JSON string of user traits
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  events    Event[]
+
+  @@map("users")
+}
+
+model Event {
+  id         String   @id @default(uuid())
+  userId     String
+  event      String
+  properties String   @default("{}") // JSON string of event properties
+  timestamp  DateTime @default(now())
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([event])
+  @@map("events")
+}
+
+model Segment {
+  id        String   @id @default(uuid())
+  name      String
+  rules     String   @default("[]") // JSON string
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("segments")
+}
+
+model FeatureFlag {
+  key       String   @id
+  enabled   Boolean  @default(false)
+  value     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("feature_flags")
+}

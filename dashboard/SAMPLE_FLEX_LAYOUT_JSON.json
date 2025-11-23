@@ -1,0 +1,240 @@
+{
+  "id": "test_bottom_sheet_002",
+  "name": "Flex Layout - Survey Form",
+  "type": "bottom_sheet",
+  "config": {
+    "type": "bottom_sheet",
+    "backgroundColor": "#F9FAFB",
+    "textColor": "#1F2937",
+    
+    "layout": {
+      "type": "flex",
+      "direction": "column",
+      "scrollable": true,
+      "padding": 24
+    },
+    
+    "components": [
+      {
+        "id": "icon",
+        "type": "image",
+        "position": {
+          "type": "flex",
+          "order": 0
+        },
+        "style": {
+          "width": 80,
+          "height": 80,
+          "borderRadius": 40,
+          "marginBottom": 16
+        },
+        "content": {
+          "url": "https://ui-avatars.com/api/?name=Survey&size=80&background=6366F1&color=fff",
+          "alt": "Survey icon"
+        }
+      },
+      
+      {
+        "id": "title",
+        "type": "text",
+        "position": {
+          "type": "flex",
+          "order": 1
+        },
+        "style": {
+          "fontSize": 24,
+          "fontWeight": "bold",
+          "color": "#1F2937",
+          "textAlign": "center",
+          "marginBottom": 8
+        },
+        "content": {
+          "text": "Quick Survey"
+        }
+      },
+      
+      {
+        "id": "subtitle",
+        "type": "text",
+        "position": {
+          "type": "flex",
+          "order": 2
+        },
+        "style": {
+          "fontSize": 14,
+          "color": "#6B7280",
+          "textAlign": "center",
+          "marginBottom": 24
+        },
+        "content": {
+          "text": "Help us improve your experience"
+        }
+      },
+      
+      {
+        "id": "divider_1",
+        "type": "divider",
+        "position": {
+          "type": "flex",
+          "order": 3
+        },
+        "style": {
+          "height": 1,
+          "color": "#E5E7EB",
+          "marginVertical": 8
+        }
+      },
+      
+      {
+        "id": "input_name",
+        "type": "input",
+        "position": {
+          "type": "flex",
+          "order": 4
+        },
+        "style": {
+          "fontSize": 16,
+          "textColor": "#1F2937",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 12,
+          "borderWidth": 1,
+          "borderColor": "#D1D5DB",
+          "paddingVertical": 14,
+          "paddingHorizontal": 16,
+          "marginBottom": 16
+        },
+        "content": {
+          "name": "name",
+          "label": "Your Name",
+          "placeholder": "John Doe",
+          "required": true
+        }
+      },
+      
+      {
+        "id": "input_email",
+        "type": "input",
+        "position": {
+          "type": "flex",
+          "order": 5
+        },
+        "style": {
+          "fontSize": 16,
+          "textColor": "#1F2937",
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 12,
+          "borderWidth": 1,
+          "borderColor": "#D1D5DB",
+          "paddingVertical": 14,
+          "paddingHorizontal": 16,
+          "marginBottom": 16
+        },
+        "content": {
+          "name": "email",
+          "label": "Email",
+          "placeholder": "you@example.com",
+          "required": true,
+          "validation": "email"
+        }
+      },
+      
+      {
+        "id": "rating_section",
+        "type": "container",
+        "position": {
+          "type": "flex",
+          "order": 6
+        },
+        "style": {
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 12,
+          "padding": 16,
+          "marginBottom": 16
+        },
+        "content": {
+          "direction": "column",
+          "alignment": "center",
+          "children": [
+            {
+              "type": "text",
+              "content": { "text": "Rate your experience" },
+              "style": {
+                "fontSize": 16,
+                "fontWeight": "600",
+                "color": "#1F2937",
+                "marginBottom": 12
+              }
+            },
+            {
+              "type": "rating",
+              "content": { "stars": 5, "value": 0 },
+              "style": {
+                "starColor": "#FFB800",
+                "emptyStarColor": "#D1D5DB",
+                "size": 36,
+                "spacing": 8
+              }
+            }
+          ]
+        }
+      },
+      
+      {
+        "id": "spacer_1",
+        "type": "spacer",
+        "position": {
+          "type": "flex",
+          "order": 7
+        },
+        "style": {
+          "height": 16
+        }
+      },
+      
+      {
+        "id": "submit_button",
+        "type": "button",
+        "position": {
+          "type": "flex",
+          "order": 8
+        },
+        "style": {
+          "backgroundColor": "#10B981",
+          "textColor": "#FFFFFF",
+          "fontSize": 18,
+          "fontWeight": "600",
+          "borderRadius": 12,
+          "paddingVertical": 16,
+          "width": "100%",
+          "elevation": 2,
+          "marginBottom": 12
+        },
+        "content": {
+          "text": "Submit Survey",
+          "action": "submit_survey"
+        }
+      },
+      
+      {
+        "id": "skip_button",
+        "type": "button",
+        "position": {
+          "type": "flex",
+          "order": 9
+        },
+        "style": {
+          "backgroundColor": "transparent",
+          "textColor": "#6B7280",
+          "fontSize": 16,
+          "borderRadius": 12,
+          "paddingVertical": 12,
+          "width": "100%"
+        },
+        "content": {
+          "text": "Skip for now",
+          "action": "dismiss"
+        }
+      }
+    ]
+  }
+}

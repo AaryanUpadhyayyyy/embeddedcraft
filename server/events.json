@@ -1,0 +1,305 @@
+{
+  "event_taxonomy": {
+    "version": "1.0.0",
+    "last_updated": "2025-11-16",
+    "description": "Industry-standard event taxonomy for nudge-flow system. Based on Segment, Amplitude, Mixpanel, Firebase Analytics best practices."
+  },
+  "lifecycle_events": {
+    "description": "Automatically tracked by SDK - no manual implementation needed",
+    "events": {
+      "app_opened": {
+        "description": "User launches the app",
+        "auto_tracked": true,
+        "properties": {
+          "user_id": "string",
+          "session_id": "string",
+          "timestamp": "ISO8601",
+          "platform": "android|ios",
+          "app_version": "string"
+        }
+      },
+      "app_backgrounded": {
+        "description": "App moves to background",
+        "auto_tracked": true,
+        "properties": {
+          "session_id": "string",
+          "duration_ms": "number"
+        }
+      },
+      "app_foregrounded": {
+        "description": "App returns to foreground",
+        "auto_tracked": true,
+        "properties": {
+          "session_id": "string"
+        }
+      },
+      "screen_viewed": {
+        "description": "User navigates to a new screen",
+        "auto_tracked": true,
+        "trigger_campaigns": true,
+        "properties": {
+          "screen_name": "string",
+          "screen_class": "string",
+          "previous_screen": "string (optional)",
+          "timestamp": "ISO8601"
+        }
+      },
+      "session_start": {
+        "description": "New session begins",
+        "auto_tracked": true,
+        "properties": {
+          "session_id": "string"
+        }
+      },
+      "session_end": {
+        "description": "Session ends",
+        "auto_tracked": true,
+        "properties": {
+          "session_id": "string",
+          "duration_ms": "number"
+        }
+      }
+    }
+  },
+  "ecommerce_events": {
+    "description": "E-commerce funnel tracking - implement in shopping flows",
+    "events": {
+      "product_viewed": {
+        "description": "User views product details",
+        "trigger_campaigns": true,
+        "properties": {
+          "product_id": "string",
+          "product_name": "string",
+          "category": "string",
+          "price": "number",
+          "currency": "string",
+          "brand": "string (optional)",
+          "variant": "string (optional)"
+        },
+        "example_campaigns": ["Cross-sell nudge", "Limited stock alert"]
+      },
+      "product_list_viewed": {
+        "description": "User views category or search results",
+        "trigger_campaigns": true,
+        "properties": {
+          "category": "string",
+          "list_id": "string",
+          "products": "array"
+        }
+      },
+      "product_added": {
+        "description": "Product added to cart",
+        "trigger_campaigns": true,
+        "properties": {
+          "product_id": "string",
+          "product_name": "string",
+          "price": "number",
+          "quantity": "number",
+          "cart_id": "string"
+        },
+        "example_campaigns": ["Free shipping threshold", "Bundle offer"]
+      },
+      "product_removed": {
+        "description": "Product removed from cart",
+        "properties": {
+          "product_id": "string",
+          "cart_id": "string"
+        }
+      },
+      "cart_viewed": {
+        "description": "User views shopping cart",
+        "trigger_campaigns": true,
+        "properties": {
+          "cart_id": "string",
+          "products": "array",
+          "cart_total": "number",
+          "item_count": "number"
+        },
+        "example_campaigns": ["Abandoned cart recovery", "Upsell recommendations"]
+      },
+      "checkout_started": {
+        "description": "User begins checkout process",
+        "trigger_campaigns": true,
+        "properties": {
+          "cart_id": "string",
+          "cart_total": "number",
+          "item_count": "number",
+          "currency": "string"
+        },
+        "example_campaigns": ["Secure checkout badge", "Express delivery offer"]
+      },
+      "checkout_step_viewed": {
+        "description": "User views checkout step",
+        "properties": {
+          "step": "number",
+          "step_name": "string"
+        }
+      },
+      "checkout_step_completed": {
+        "description": "User completes checkout step",
+        "properties": {
+          "step": "number",
+          "step_name": "string"
+        }
+      },
+      "payment_info_entered": {
+        "description": "Payment method added",
+        "properties": {
+          "payment_method": "string"
+        }
+      },
+      "order_completed": {
+        "description": "Purchase successful",
+        "trigger_campaigns": true,
+        "properties": {
+          "order_id": "string",
+          "total": "number",
+          "revenue": "number",
+          "currency": "string",
+          "products": "array",
+          "coupon": "string (optional)"
+        },
+        "example_campaigns": ["Thank you message", "Review request", "Loyalty program"]
+      },
+      "order_refunded": {
+        "description": "Order refunded",
+        "properties": {
+          "order_id": "string",
+          "refund_amount": "number"
+        }
+      }
+    }
+  },
+  "engagement_events": {
+    "description": "User interaction and engagement tracking",
+    "events": {
+      "button_clicked": {
+        "description": "Generic button interaction",
+        "trigger_campaigns": true,
+        "properties": {
+          "button_name": "string",
+          "button_text": "string",
+          "screen_name": "string",
+          "timestamp": "ISO8601"
+        }
+      },
+      "link_clicked": {
+        "description": "Link or CTA clicked",
+        "properties": {
+          "link_url": "string",
+          "link_text": "string",
+          "screen_name": "string"
+        }
+      },
+      "form_submitted": {
+        "description": "Form completion",
+        "trigger_campaigns": true,
+        "properties": {
+          "form_name": "string",
+          "form_type": "string",
+          "success": "boolean"
+        }
+      },
+      "search_performed": {
+        "description": "Search query executed",
+        "trigger_campaigns": true,
+        "properties": {
+          "query": "string",
+          "results_count": "number",
+          "filters": "object (optional)"
+        },
+        "example_campaigns": ["No results help", "Popular products"]
+      },
+      "content_shared": {
+        "description": "Content shared via social/messaging",
+        "properties": {
+          "share_method": "string",
+          "content_type": "string",
+          "content_id": "string"
+        }
+      },
+      "video_played": {
+        "description": "Video playback started",
+        "properties": {
+          "video_id": "string",
+          "video_title": "string"
+        }
+      },
+      "video_completed": {
+        "description": "Video finished",
+        "properties": {
+          "video_id": "string",
+          "duration_watched_ms": "number"
+        }
+      },
+      "article_read": {
+        "description": "Article/content consumed",
+        "properties": {
+          "article_id": "string",
+          "title": "string",
+          "time_spent_ms": "number"
+        }
+      }
+    }
+  },
+  "campaign_events": {
+    "description": "Campaign/nudge interaction tracking - automatically tracked by SDK",
+    "events": {
+      "campaign_viewed": {
+        "description": "Nudge impression tracked",
+        "auto_tracked": true,
+        "properties": {
+          "campaign_id": "string",
+          "campaign_name": "string",
+          "campaign_type": "string"
+        }
+      },
+      "campaign_clicked": {
+        "description": "User interacted with nudge",
+        "auto_tracked": true,
+        "properties": {
+          "campaign_id": "string",
+          "campaign_name": "string",
+          "button_text": "string"
+        }
+      },
+      "campaign_dismissed": {
+        "description": "User closed nudge",
+        "auto_tracked": true,
+        "properties": {
+          "campaign_id": "string",
+          "time_visible_ms": "number"
+        }
+      },
+      "campaign_converted": {
+        "description": "Campaign goal achieved",
+        "properties": {
+          "campaign_id": "string",
+          "conversion_type": "string",
+          "value": "number (optional)"
+        }
+      }
+    }
+  },
+  "example_implementations": {
+    "flutter_app": {
+      "description": "Example Flutter implementation",
+      "code": "AppNinja.track('product_viewed', properties: {\n  'product_id': 'SKU123',\n  'product_name': 'Wireless Headphones',\n  'category': 'Electronics',\n  'price': 99.99,\n  'currency': 'USD'\n});"
+    },
+    "campaign_trigger": {
+      "description": "Example campaign configuration",
+      "json": {
+        "name": "Free Shipping Offer",
+        "trigger": "cart_viewed",
+        "rules": [
+          {
+            "type": "event",
+            "field": "cart_total",
+            "operator": ">=",
+            "value": "50"
+          }
+        ]
+      }
+    }
+  }
+}

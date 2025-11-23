@@ -1,0 +1,550 @@
+{
+  "templates": [
+    {
+      "id": "flash_sale_001",
+      "name": "Flash Sale Offer",
+      "category": "offers",
+      "description": "Eye-catching sale announcement with countdown and CTA",
+      "thumbnail": "🔥",
+      "tags": ["sale", "urgent", "discount", "ecommerce"],
+      "popularity": 1234,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": {
+          "type": "absolute",
+          "width": 375,
+          "height": 600
+        },
+        "components": [
+          {
+            "id": "bg_shape",
+            "type": "shape",
+            "position": { "type": "absolute", "x": 0, "y": 0, "width": 375, "height": 120, "zIndex": 1 },
+            "content": { "shapeType": "rectangle" },
+            "style": { "backgroundColor": "#FF3B30", "borderRadius": 0 }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 30, "width": 335, "height": 50, "zIndex": 2 },
+            "content": { "text": "🔥 FLASH SALE!" },
+            "style": { "fontSize": 32, "fontWeight": "bold", "color": "#FFFFFF", "textAlign": "center" }
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 80, "width": 335, "height": 30, "zIndex": 2 },
+            "content": { "text": "Up to 70% OFF" },
+            "style": { "fontSize": 18, "color": "#FFFFFF", "textAlign": "center" }
+          },
+          {
+            "id": "product_img",
+            "type": "image",
+            "position": { "type": "absolute", "x": 37, "y": 140, "width": 300, "height": 200, "zIndex": 2 },
+            "content": { "url": "https://via.placeholder.com/300x200?text=Your+Product" },
+            "style": { "borderRadius": 12 }
+          },
+          {
+            "id": "timer",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 360, "width": 335, "height": 30, "zIndex": 2 },
+            "content": { "text": "⏰ Ends in: 2h 34m" },
+            "style": { "fontSize": 20, "fontWeight": "600", "color": "#FF3B30", "textAlign": "center" }
+          },
+          {
+            "id": "cta_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 410, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Shop Now →" },
+            "style": { "backgroundColor": "#000000", "textColor": "#FFFFFF", "fontSize": 18, "fontWeight": "bold", "borderRadius": 25 }
+          },
+          {
+            "id": "footer_text",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 480, "width": 335, "height": 20, "zIndex": 2 },
+            "content": { "text": "Limited stock available" },
+            "style": { "fontSize": 12, "color": "#666666", "textAlign": "center" }
+          }
+        ]
+      },
+      "editableFields": {
+        "title": { "componentId": "title", "property": "content.text", "label": "Main Title" },
+        "subtitle": { "componentId": "subtitle", "property": "content.text", "label": "Discount Text" },
+        "product_img": { "componentId": "product_img", "property": "content.url", "label": "Product Image URL" },
+        "timer": { "componentId": "timer", "property": "content.text", "label": "Timer Text" },
+        "cta_btn": { "componentId": "cta_btn", "property": "content.text", "label": "Button Text" }
+      }
+    },
+    {
+      "id": "welcome_discount_001",
+      "name": "Welcome Discount",
+      "category": "offers",
+      "description": "First-time user welcome offer with discount code",
+      "thumbnail": "🎉",
+      "tags": ["welcome", "discount", "first-purchase"],
+      "popularity": 892,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 500 },
+        "components": [
+          {
+            "id": "emoji",
+            "type": "text",
+            "position": { "type": "absolute", "x": 137, "y": 20, "width": 100, "height": 80, "zIndex": 2 },
+            "content": { "text": "🎉" },
+            "style": { "fontSize": 72, "textAlign": "center" }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 110, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Welcome!" },
+            "style": { "fontSize": 32, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 155, "width": 335, "height": 50, "zIndex": 2 },
+            "content": { "text": "Get 20% OFF on your first order" },
+            "style": { "fontSize": 18, "color": "#666666", "textAlign": "center" }
+          },
+          {
+            "id": "coupon_box",
+            "type": "shape",
+            "position": { "type": "absolute", "x": 62, "y": 220, "width": 250, "height": 60, "zIndex": 1 },
+            "content": { "shapeType": "rounded" },
+            "style": { "backgroundColor": "#F0F0F0", "borderRadius": 12, "borderWidth": 2, "borderColor": "#000000" }
+          },
+          {
+            "id": "coupon_code",
+            "type": "text",
+            "position": { "type": "absolute", "x": 62, "y": 220, "width": 250, "height": 60, "zIndex": 2 },
+            "content": { "text": "WELCOME20" },
+            "style": { "fontSize": 24, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "copy_hint",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 290, "width": 335, "height": 20, "zIndex": 2 },
+            "content": { "text": "Copy code at checkout" },
+            "style": { "fontSize": 12, "color": "#999999", "textAlign": "center" }
+          },
+          {
+            "id": "cta_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 330, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Start Shopping" },
+            "style": { "backgroundColor": "#8B5CF6", "textColor": "#FFFFFF", "fontSize": 18, "fontWeight": "bold", "borderRadius": 25 }
+          },
+          {
+            "id": "terms",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 400, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Valid for first purchase only\nExpires in 7 days" },
+            "style": { "fontSize": 11, "color": "#AAAAAA", "textAlign": "center", "lineHeight": 1.5 }
+          }
+        ]
+      },
+      "editableFields": {
+        "subtitle": { "componentId": "subtitle", "property": "content.text", "label": "Offer Text" },
+        "coupon_code": { "componentId": "coupon_code", "property": "content.text", "label": "Coupon Code" },
+        "cta_btn": { "componentId": "cta_btn", "property": "content.text", "label": "Button Text" }
+      }
+    },
+    {
+      "id": "announcement_001",
+      "name": "Simple Announcement",
+      "category": "announcements",
+      "description": "Clean announcement with icon and message",
+      "thumbnail": "📢",
+      "tags": ["announcement", "update", "news"],
+      "popularity": 756,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 400 },
+        "components": [
+          {
+            "id": "icon_bg",
+            "type": "shape",
+            "position": { "type": "absolute", "x": 137, "y": 30, "width": 100, "height": 100, "zIndex": 1 },
+            "content": { "shapeType": "circle" },
+            "style": { "backgroundColor": "#E3F2FD", "borderRadius": 50 }
+          },
+          {
+            "id": "icon",
+            "type": "text",
+            "position": { "type": "absolute", "x": 137, "y": 50, "width": 100, "height": 60, "zIndex": 2 },
+            "content": { "text": "📢" },
+            "style": { "fontSize": 48, "textAlign": "center" }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 150, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "New Feature Available!" },
+            "style": { "fontSize": 24, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "message",
+            "type": "text",
+            "position": { "type": "absolute", "x": 30, "y": 200, "width": 315, "height": 80, "zIndex": 2 },
+            "content": { "text": "We've added a new feature that makes your experience even better. Check it out now!" },
+            "style": { "fontSize": 16, "color": "#666666", "textAlign": "center", "lineHeight": 1.5 }
+          },
+          {
+            "id": "cta_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 300, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Learn More" },
+            "style": { "backgroundColor": "#2196F3", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "600", "borderRadius": 25 }
+          }
+        ]
+      },
+      "editableFields": {
+        "icon": { "componentId": "icon", "property": "content.text", "label": "Icon Emoji" },
+        "title": { "componentId": "title", "property": "content.text", "label": "Title" },
+        "message": { "componentId": "message", "property": "content.text", "label": "Message" },
+        "cta_btn": { "componentId": "cta_btn", "property": "content.text", "label": "Button Text" }
+      }
+    },
+    {
+      "id": "product_showcase_001",
+      "name": "Product Showcase",
+      "category": "products",
+      "description": "Single product display with image, title, price, and CTA",
+      "thumbnail": "🛍️",
+      "tags": ["product", "showcase", "ecommerce"],
+      "popularity": 643,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 550 },
+        "components": [
+          {
+            "id": "badge",
+            "type": "shape",
+            "position": { "type": "absolute", "x": 20, "y": 20, "width": 80, "height": 30, "zIndex": 3 },
+            "content": { "shapeType": "rounded" },
+            "style": { "backgroundColor": "#34C759", "borderRadius": 15 }
+          },
+          {
+            "id": "badge_text",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 20, "width": 80, "height": 30, "zIndex": 4 },
+            "content": { "text": "NEW" },
+            "style": { "fontSize": 12, "fontWeight": "bold", "color": "#FFFFFF", "textAlign": "center" }
+          },
+          {
+            "id": "product_img",
+            "type": "image",
+            "position": { "type": "absolute", "x": 37, "y": 60, "width": 300, "height": 250, "zIndex": 2 },
+            "content": { "url": "https://via.placeholder.com/300x250?text=Product+Image" },
+            "style": { "borderRadius": 16 }
+          },
+          {
+            "id": "product_name",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 330, "width": 335, "height": 35, "zIndex": 2 },
+            "content": { "text": "Premium Wireless Headphones" },
+            "style": { "fontSize": 22, "fontWeight": "bold", "color": "#000000", "textAlign": "left" }
+          },
+          {
+            "id": "product_desc",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 370, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Noise cancelling, 30hr battery, premium sound" },
+            "style": { "fontSize": 14, "color": "#666666", "textAlign": "left", "lineHeight": 1.4 }
+          },
+          {
+            "id": "price",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 420, "width": 150, "height": 35, "zIndex": 2 },
+            "content": { "text": "$199.99" },
+            "style": { "fontSize": 28, "fontWeight": "bold", "color": "#000000", "textAlign": "left" }
+          },
+          {
+            "id": "cta_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 180, "y": 420, "width": 175, "height": 45, "zIndex": 2 },
+            "content": { "text": "Add to Cart" },
+            "style": { "backgroundColor": "#000000", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "600", "borderRadius": 23 }
+          }
+        ]
+      },
+      "editableFields": {
+        "badge_text": { "componentId": "badge_text", "property": "content.text", "label": "Badge Text" },
+        "product_img": { "componentId": "product_img", "property": "content.url", "label": "Product Image" },
+        "product_name": { "componentId": "product_name", "property": "content.text", "label": "Product Name" },
+        "product_desc": { "componentId": "product_desc", "property": "content.text", "label": "Description" },
+        "price": { "componentId": "price", "property": "content.text", "label": "Price" }
+      }
+    },
+    {
+      "id": "feedback_form_001",
+      "name": "Quick Feedback",
+      "category": "forms",
+      "description": "Simple rating feedback form",
+      "thumbnail": "⭐",
+      "tags": ["feedback", "rating", "survey"],
+      "popularity": 521,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 450 },
+        "components": [
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 30, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "How was your experience?" },
+            "style": { "fontSize": 24, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 75, "width": 335, "height": 30, "zIndex": 2 },
+            "content": { "text": "Your feedback helps us improve" },
+            "style": { "fontSize": 14, "color": "#666666", "textAlign": "center" }
+          },
+          {
+            "id": "rating",
+            "type": "rating",
+            "position": { "type": "absolute", "x": 87, "y": 130, "width": 200, "height": 50, "zIndex": 2 },
+            "content": { "stars": 5, "value": 0 },
+            "style": { "size": 40, "starColor": "#FFC107", "emptyStarColor": "#E0E0E0" }
+          },
+          {
+            "id": "comment_label",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 200, "width": 335, "height": 25, "zIndex": 2 },
+            "content": { "text": "Tell us more (optional):" },
+            "style": { "fontSize": 14, "fontWeight": "600", "color": "#000000", "textAlign": "left" }
+          },
+          {
+            "id": "comment_box",
+            "type": "input",
+            "position": { "type": "absolute", "x": 20, "y": 230, "width": 335, "height": 100, "zIndex": 2 },
+            "content": { "placeholder": "Share your thoughts..." },
+            "style": { "fontSize": 14, "backgroundColor": "#F5F5F5", "borderRadius": 8, "padding": 12 }
+          },
+          {
+            "id": "submit_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 350, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Submit Feedback" },
+            "style": { "backgroundColor": "#4CAF50", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "600", "borderRadius": 25 }
+          }
+        ]
+      },
+      "editableFields": {
+        "title": { "componentId": "title", "property": "content.text", "label": "Question" },
+        "subtitle": { "componentId": "subtitle", "property": "content.text", "label": "Subtitle" },
+        "submit_btn": { "componentId": "submit_btn", "property": "content.text", "label": "Button Text" }
+      }
+    },
+    {
+      "id": "email_capture_001",
+      "name": "Email Signup",
+      "category": "forms",
+      "description": "Newsletter signup with incentive",
+      "thumbnail": "📧",
+      "tags": ["email", "newsletter", "signup", "lead-gen"],
+      "popularity": 487,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 450 },
+        "components": [
+          {
+            "id": "icon",
+            "type": "text",
+            "position": { "type": "absolute", "x": 137, "y": 30, "width": 100, "height": 70, "zIndex": 2 },
+            "content": { "text": "📧" },
+            "style": { "fontSize": 64, "textAlign": "center" }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 110, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Get 10% OFF" },
+            "style": { "fontSize": 28, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 155, "width": 335, "height": 45, "zIndex": 2 },
+            "content": { "text": "Subscribe to our newsletter and get exclusive offers!" },
+            "style": { "fontSize": 15, "color": "#666666", "textAlign": "center", "lineHeight": 1.4 }
+          },
+          {
+            "id": "email_input",
+            "type": "input",
+            "position": { "type": "absolute", "x": 37, "y": 220, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "placeholder": "Enter your email" },
+            "style": { "fontSize": 16, "backgroundColor": "#F5F5F5", "borderRadius": 25, "padding": 16, "textAlign": "center" }
+          },
+          {
+            "id": "subscribe_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 290, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Subscribe Now" },
+            "style": { "backgroundColor": "#FF6B6B", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "bold", "borderRadius": 25 }
+          },
+          {
+            "id": "privacy",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 355, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "We respect your privacy.\nUnsubscribe anytime." },
+            "style": { "fontSize": 11, "color": "#999999", "textAlign": "center", "lineHeight": 1.5 }
+          }
+        ]
+      },
+      "editableFields": {
+        "title": { "componentId": "title", "property": "content.text", "label": "Offer Text" },
+        "subtitle": { "componentId": "subtitle", "property": "content.text", "label": "Subtitle" },
+        "subscribe_btn": { "componentId": "subscribe_btn", "property": "content.text", "label": "Button Text" }
+      }
+    },
+    {
+      "id": "app_update_001",
+      "name": "App Update Prompt",
+      "category": "announcements",
+      "description": "Encourage users to update the app",
+      "thumbnail": "🚀",
+      "tags": ["update", "version", "app"],
+      "popularity": 412,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 450 },
+        "components": [
+          {
+            "id": "icon",
+            "type": "text",
+            "position": { "type": "absolute", "x": 137, "y": 30, "width": 100, "height": 80, "zIndex": 2 },
+            "content": { "text": "🚀" },
+            "style": { "fontSize": 72, "textAlign": "center" }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 120, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Update Available!" },
+            "style": { "fontSize": 26, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "version",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 165, "width": 335, "height": 25, "zIndex": 2 },
+            "content": { "text": "Version 2.0 is here" },
+            "style": { "fontSize": 16, "color": "#666666", "textAlign": "center" }
+          },
+          {
+            "id": "features_title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 30, "y": 210, "width": 315, "height": 25, "zIndex": 2 },
+            "content": { "text": "What's new:" },
+            "style": { "fontSize": 14, "fontWeight": "600", "color": "#000000", "textAlign": "left" }
+          },
+          {
+            "id": "features",
+            "type": "text",
+            "position": { "type": "absolute", "x": 30, "y": 240, "width": 315, "height": 80, "zIndex": 2 },
+            "content": { "text": "• Faster performance\n• New design\n• Bug fixes and improvements" },
+            "style": { "fontSize": 14, "color": "#666666", "textAlign": "left", "lineHeight": 1.8 }
+          },
+          {
+            "id": "update_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 340, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Update Now" },
+            "style": { "backgroundColor": "#007AFF", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "bold", "borderRadius": 25 }
+          }
+        ]
+      },
+      "editableFields": {
+        "version": { "componentId": "version", "property": "content.text", "label": "Version Text" },
+        "features": { "componentId": "features", "property": "content.text", "label": "Features List" }
+      }
+    },
+    {
+      "id": "referral_bonus_001",
+      "name": "Referral Program",
+      "category": "offers",
+      "description": "Refer a friend incentive program",
+      "thumbnail": "🎁",
+      "tags": ["referral", "reward", "invite"],
+      "popularity": 389,
+      "config": {
+        "type": "bottom_sheet",
+        "layout": { "type": "absolute", "width": 375, "height": 500 },
+        "components": [
+          {
+            "id": "gift_emoji",
+            "type": "text",
+            "position": { "type": "absolute", "x": 137, "y": 25, "width": 100, "height": 80, "zIndex": 2 },
+            "content": { "text": "🎁" },
+            "style": { "fontSize": 72, "textAlign": "center" }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 110, "width": 335, "height": 40, "zIndex": 2 },
+            "content": { "text": "Give $10, Get $10" },
+            "style": { "fontSize": 26, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "subtitle",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 155, "width": 335, "height": 50, "zIndex": 2 },
+            "content": { "text": "Invite friends and you both get rewards!" },
+            "style": { "fontSize": 16, "color": "#666666", "textAlign": "center", "lineHeight": 1.4 }
+          },
+          {
+            "id": "code_label",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 220, "width": 335, "height": 25, "zIndex": 2 },
+            "content": { "text": "Your referral code:" },
+            "style": { "fontSize": 14, "color": "#666666", "textAlign": "center" }
+          },
+          {
+            "id": "code_box",
+            "type": "shape",
+            "position": { "type": "absolute", "x": 87, "y": 250, "width": 200, "height": 50, "zIndex": 1 },
+            "content": { "shapeType": "rounded" },
+            "style": { "backgroundColor": "#FFF9C4", "borderRadius": 10, "borderWidth": 2, "borderColor": "#FBC02D" }
+          },
+          {
+            "id": "code_text",
+            "type": "text",
+            "position": { "type": "absolute", "x": 87, "y": 250, "width": 200, "height": 50, "zIndex": 2 },
+            "content": { "text": "FRIEND10" },
+            "style": { "fontSize": 22, "fontWeight": "bold", "color": "#000000", "textAlign": "center" }
+          },
+          {
+            "id": "share_btn",
+            "type": "button",
+            "position": { "type": "absolute", "x": 37, "y": 330, "width": 300, "height": 50, "zIndex": 2 },
+            "content": { "text": "Share with Friends" },
+            "style": { "backgroundColor": "#4CAF50", "textColor": "#FFFFFF", "fontSize": 16, "fontWeight": "bold", "borderRadius": 25 }
+          },
+          {
+            "id": "terms",
+            "type": "text",
+            "position": { "type": "absolute", "x": 20, "y": 400, "width": 335, "height": 30, "zIndex": 2 },
+            "content": { "text": "Terms and conditions apply" },
+            "style": { "fontSize": 11, "color": "#999999", "textAlign": "center" }
+          }
+        ]
+      },
+      "editableFields": {
+        "title": { "componentId": "title", "property": "content.text", "label": "Offer Text" },
+        "subtitle": { "componentId": "subtitle", "property": "content.text", "label": "Description" },
+        "code_text": { "componentId": "code_text", "property": "content.text", "label": "Referral Code" }
+      }
+    }
+  ],
+  "categories": [
+    { "id": "all", "name": "All Templates", "icon": "📚" },
+    { "id": "offers", "name": "Offers & Promotions", "icon": "🎉" },
+    { "id": "announcements", "name": "Announcements", "icon": "📢" },
+    { "id": "products", "name": "Products", "icon": "🛍️" },
+    { "id": "forms", "name": "Forms & Surveys", "icon": "📋" }
+  ]
+}

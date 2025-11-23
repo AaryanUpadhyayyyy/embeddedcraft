@@ -1,0 +1,15 @@
+{
+  "name": "@plotline/sdk",
+  "version": "0.1.0",
+  "description": "Plotline lightweight client SDK (identify, track, fetchCampaigns)",
+  "main": "index.js",
+  "keywords": ["plotline","sdk","nudge"],
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "plotline.js"
+  ],
+  "engines": {
+    "node": ">=14"
+  }
+}
